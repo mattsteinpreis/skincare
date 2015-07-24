@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title> Steph's Skincare Search </title>
+  </head>
+  <body>
+    <form action="/select" method="post">
+     <input type="text" name="category"></input>
+     <input type="submit" value="Submit"></input>
+    </form>
+    <form action="/reset" method="post">
+     <input type="submit" value="Reset"></input>
+    </form>
+
+   {% block content %}
+   {{data | safe}}
+   {% endblock %}
+  </body>
+</html>
