@@ -1,16 +1,33 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title> Steph's Skincare Search </title>
+      <title> Steph's Skincare Search </title>
   </head>
   <body>
-    <form action="/select" method="post">
-     <input type="text" name="category"></input>
-     <input type="submit" value="Submit"></input>
-    </form>
-    <form action="/reset" method="post">
-     <input type="submit" value="Reset"></input>
-    </form>
+      <form action="/select" method="post">
+          <div>
+              <label for="category">Filter by category:</label>
+              <input type="text" name="category"></input>
+          </div>
+          <div>
+              <label for="ingredient">Exclude ingredient:</label>
+              <input type="text" name="ingredient"></input>
+          </div>
+          <div>
+              <label for="sort">Sort by:</label>
+              <select name="sort">
+                  <option value="blank"></option>
+                  <option value="pricelow">Price (lowest)</option>
+                  <option value="pricehigh">Price (highest)</option>
+                  <option value="ratinglow">Rating (lowest)</option>
+                  <option value="ratinghigh">Rating (highest)</option>
+              </select>
+          </div>
+          <input type="submit" value="Submit"></input>
+      </form>
+      <form action="/reset" method="post">
+          <input type="submit" value="Reset"></input>
+      </form>
 
    {% block content %}
    {{data | safe}}
