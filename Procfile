@@ -1,3 +1,2 @@
-
-web: gunicorn hello:app --log-file -
+web: gunicorn skincare:app --log-file -
 
